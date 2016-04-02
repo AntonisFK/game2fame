@@ -1,19 +1,29 @@
-// require express so that we can build the app
 var express = require('express');
 var path = require('path');
-
-var app = express(); 
 var bodyParser = require('body-parser');
-//returns middleware that only parses json 
+var morgan = require('morgan');
+var cookieParser = require('cookie-parser');
+var passport = require('passport');
+var app = express();
+
+
+app.use(morgan('dev')); // log every request to the console
 app.use(bodyParser.json());
-
-//use static file in path 
 app.use(express.static(path.join(__dirname, './client')));
-//config routes and database 
-require('./server/config/mongoose.js');
-require('./server/config/routes.js')(app);
+app.use(cookieParser());
+app.use(passport.initialize());
 
-// binds and listens for connections on the specified host and port 
-app.listen(8000, function(){
-  console.log('Play2fame running on port 8000')
+require('./server/config/mongoose.js');
+require('./passport/passport.js');
+
+var routes_setter = require('./server/config/routes.js');
+routes_setter(app);
+
+
+var server = app.listen(8000, function(){
+  console.log('listening on port 8000');
 });
+var route = require('./server/config/chatroom.js');
+route(app, server);
+
+// var io =require("socket.io").listen(server);

@@ -1,0 +1,63 @@
+<div id='loginPage' ng-controller="authController">
+		<div class="container">
+			<div id="login_form" ng-show="!show_registration">
+			<center><p style="font-size:50px; color:orange;">Login</p></center>
+				<form role="form" ng-submit="logIn()">
+					<div class="form-group">
+						<label for="username">Username:</label>
+			    		<input type="text" class="form-control" ng-model="login_user.username" id="input">
+			  		</div>
+			  		<div class="form-group">
+						<label for="password">Password:</label>
+			    		<input type="password" class="form-control" ng-model="login_user.password" id="input">
+			  		</div>
+			  		<button type="submit" class="btn btn-primary" style="position: relative; left: 200px; background-color:orange;">Login</button>
+			  </form>
+			</div>
+
+			<div id="registration_form" ng-hide="!show_registration">
+				<center><p style="font-size:50px; color:orange;">Register</p></center>
+			  	<form role="form" ng-submit="register()">
+			  		<div class="form-group">
+						<label for="username">Username:</label>
+			    		<input type="username" class="form-control" ng-model="new_user.username" id="input">
+			  		</div>
+					<div class="form-group">
+						<label for="email">Email Address:</label>
+			    		<input type="email" class="form-control" ng-model="new_user.email" id="input">
+			  		</div>
+			  		<div class="form-group">
+						<label for="password">Password:</label>
+			    		<input type="password" class="form-control" ng-model="new_user.password" id="input">
+			  		</div>
+			  		<div class="form-group">
+						<label for="confirm_password">Confirm Password:</label>
+			    		<input type="password" class="form-control" ng-model="new_user.confirm_password" id="input">
+			  		</div>
+						<div class="form-group">
+							<label for="twitch_id">Twitch ID:</label>
+				    		<input type="text" class="form-control" ng-model="new_user.twitch_id" id="input">
+				  		</div>
+							<div class="form-group">
+								<label for="gamertag">Gamertag:</label>
+					    		<input type="text" class="form-control" ng-model="new_user.gamertag" id="input">
+					  		</div>
+							<div class="form-group">
+								<label for="about_me">About Me:</label>
+								<textarea class="form-control" ng-model="new_user.about_me" rows="3" id="textarea"></textarea>
+							</div>
+			  		<button type="submit" class="btn btn-primary" style="position: relative; left: 200px; background-color:orange;">Register</button>
+			  	</form>
+			</div>
+
+			<br>
+
+			<a id="loginlink"style="cursor:pointer; position: relative; left: 200px; color:orange;" ng-click="show_registration = !show_registration"><span ng-if="!show_registration">Create Account</span><span ng-if="show_registration">Login</span></a>
+
+			<div ng-show="error" class="alert alert-danger row">
+				<span ng-if="!error.message">{{ error }}</span>
+				<span>{{ error.message }}</span>
+			</div>
+
+		</div>
+	</div>

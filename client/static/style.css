@@ -1,0 +1,248 @@
+.modal-header, h4, .close {
+ background-color: #5cb85c;
+ color:white !important;
+ text-align: center;
+ font-size: 30px;
+}
+.modal-footer {
+  position: relative;
+  top: 450px;
+  background-color: #f9f9f9;
+  text-align: left;
+  height: 125px;
+}
+
+.modal-footer button{
+  position: relative;
+  right: 50px;
+  top: 50px;
+}
+
+.modal-footer .member{
+  position: relative;
+  right: 400px;
+}
+#form_modal{
+  position: relative;
+  left: 150px;
+}
+label{
+  color: orange;
+}
+
+
+#video{
+  position: absolute;
+  height: 700px;
+  background-color: black;
+  margin-bottom: 100px;
+}
+#hitmen{
+  background: transparent;
+}
+
+#hitman1{
+  position: relative;
+  top: 825px;
+  margin-left: 125px;
+  background: transparent;
+
+}
+#hitman2{
+  position: relative;
+  top: 825px;
+  margin-left: 50px;
+  background: transparent;
+}
+#hitman3{
+  position: relative;
+  top: 825px;
+  margin-left: 50px;
+  background: transparent;
+}
+.thumbnail{
+  background: transparent;
+}
+html{
+
+  background: transparent;
+}
+h1{
+  position: relative;
+  color: white;
+  background-color: black;
+  font-family: cursive;
+  top: 750px;
+  font-size: 125px;
+
+}
+ #player_profile_name{
+  position: relative;
+  color: orange;
+  background: transparent;
+}
+#player_info{
+  width: 700px;
+  margin: auto;
+  color: orange;
+}
+#profile_pic{
+  position: relative;
+  width: 275px;
+  margin: auto;
+}
+.jumbotron{
+  position: relative;
+  top: 900px;
+  background: transparent;
+}
+#jumbotron2{
+  position: relative;
+  top: 875px;
+  background: transparent;
+}
+body{
+  background-image: url("/static/videos_pics/bulletholes.jpg");
+  width: 100%;
+}
+.aboutPar{
+  margin: 50px;
+  color: white;
+}
+h2{
+  color: white;
+}
+#fullNav{
+  background: transparent;
+  border: transparent;
+}
+#sign_up_button{
+  position: relative;
+  bottom: 5px;
+}
+#modal_form{
+  height: 565px;
+}
+#myBtn{
+  position: relative;
+  bottom: 12px;
+}
+.checkbox{
+  position: relative;
+  left: 200px;
+}
+.caption{
+  background-color: black;
+}
+#container{
+  position: relative;
+  height: 700px;
+  width: 900px;
+  background: transparent;
+  border: 5px solid orange;
+  margin: auto;
+}
+#new_message{
+  position: relative;
+}
+#message{
+  height: 25px;
+  width: 600px;
+  margin: auto;
+}
+#game_pic1 img{
+  width: 600px;
+  margin: 50px;
+  display: inline;
+  background: transparent;
+}
+#game_pic2 img{
+  display: inline;
+  width: 600px;
+  margin: 50px;
+  background: transparent;
+}
+#game_pic3 img{
+  display: inline;
+  width: 600px;
+  margin: 50px;
+  background: transparent;
+}
+#game_pic4 img{
+  display: inline;
+  width: 600px;
+  margin: 50px;
+  background: transparent;
+}
+#game_pic1{
+  display: inline-block;
+  background: transparent;
+}
+#game_pic2{
+  display: inline-block;
+  background: transparent;
+}
+#game_pic3{
+  display: inline-block;
+  background: transparent;
+}
+#game_pic4{
+  display: inline-block;
+  background: transparent;
+}
+#most_wanted{
+  background: transparent;
+  font-family: cursive;
+  font-size: 100px;
+  color: white;
+}
+.game_pics{
+  background: transparent;
+}
+#jumbotron{
+  background: transparent;
+  color: white;
+  font-family: fantasy;
+  font-size: 62px;
+}
+#edit_profile{
+  color: orange;
+}
+.checkbox{
+  position: relative;
+  left: 300px;
+}
+.form-group{
+  position: relative;
+  left: 200px;
+}
+h2{
+  position: relative;
+  left: 300px;
+}
+#twitch_stream_container{
+  height: 600px;
+  background-color: orange;
+}
+#about_me{
+  position: relative;
+  right: 22px;
+  background-color: orange;
+}
+#input{
+  width: 200px;
+}
+#textarea{
+  width: 400px;
+}
+#message_board p{
+  position: relative;
+  right: 225px;
+  color: orange;
+}
+#bitcoin_table{
+  position: relative;
+  margin: auto;
+  color: orange;
+  background-color: black;
+}

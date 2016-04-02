@@ -1,0 +1,62 @@
+<html ng-app="myApp">
+  <head>
+    <title>myApp</title>
+    <link rel='stylesheet' href='/static/style.css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="./js/config/routes.js"></script>
+    <script type="text/javascript" src="./js/model/authFactory.js"></script>
+    <script type="text/javascript" src="./js/model/MatchmakingFactory.js"></script>
+    <script type="text/javascript" src="./js/model/loginFactory.js"></script>
+    <script type="text/javascript" src="./js/controller/authController.js"></script>
+    <script type="text/javascript" src="./js/controller/loginController.js"></script>
+    <script type="text/javascript" src="./js/controller/MatchmakingsController.js"></script>
+    <script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="./bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="./bower_components/ui-navbar/release/js/ui-navbar.js"></script>
+    <script src="./bower_components/angular-auto-validate/dist/jcs-auto-validate.js"></script>
+  </head>
+  <body>
+    <div>
+      <div id="header">
+        <nav class="navbar navbar-default " id="fullNav">
+          <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            <a href="#"><img src="/static/videos_pics/game2fame_white_logo.png" style="height: 200px;"></a>
+           </div>
+
+
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="loginController">
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#/game_room">Game Room</a></li>
+              <li><a href="/" ng-click="logOut()">Log Out</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+  </div>
+      <div class='' ui-view></div>
+  </body>
+</html>

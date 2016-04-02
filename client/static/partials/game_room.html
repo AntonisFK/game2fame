@@ -1,0 +1,100 @@
+<script>
+$(document).ready(function(){
+var socket = io.connect();
+var $element = $('div[ng-controller="loginController"]');
+var scope = angular.element($element).scope();
+console.log(scope.currentUser)
+// current_user = currentUser();
+var current_user = scope.currentUser;
+console.log(socket);
+
+// socket.on("existing_user", function(data){
+//   $("#error").html(data.error)
+//   new_user();
+// })
+
+socket.on("load_messages", function(data){
+  $("#error").html("") //resetting the error message
+  current_user = data.current_user;
+  var messages = data.messages;
+  var messages_thread = "";
+
+  for (var i = 0; i < messages.length; i++){
+    messages_thread += "<p>" + messages[i].name + ": " + messages[i].message + "</p>";
+  }
+
+  $("#message_board").append(messages_thread);
+})
+
+$("#new_message").submit(function(){
+  socket.emit("new_message", {message: $("#message").val(), user: current_user})
+  return false;
+})
+
+socket.on("post_new_message", function(data) {
+  $("#message_board").append("<p style='position:relative; left: 5px;'>" + data.user + ": " + data.new_message + "</p>");
+})
+});
+</script>
+<div class="wrapper" ng-controller="MatchmakingsController">
+  <center>
+  <form style="position:relative";>
+    <input type="text" placeholder="name of gameroom" ng-model="newMatch.name">
+    <input type="text" placeholder="platform" ng-model="newMatch.platform">
+    <input type="text" placeholder="Game" ng-model="newMatch.game">
+    <input type="time" step="900" name ="time" ng-model="newMatch.datetime">
+    <select class="form-control" ng-model="newMatch.players" style="width:150px; display:inline;">
+      <option>Forgot10_Prodigy</option>
+      <option>Spongebob</option>
+      <option>ThePerxican</option>
+      <option>Dumbox83</option>
+      <option>ThaGSM</option>
+      <option>Matt-Chew</option>
+    </select>
+    <input type="text" placeholder="BTC Wager" ng-model="newMatch.btc">
+    <input type="submit" ng-click=create()>
+    <br>
+    <span ng-show="btcAddress" style="color:orange; background-color:black;">Plz send your btc to this address: {{btcAddress}}</span>
+  </form>
+</center>
+  <div class="gameroom">
+    <table border="1" id="bitcoin_table">
+
+      <tr>
+        <th>Posted By</th>
+        <th>Game Starts</th>
+        <th>Room name</th>
+        <th>Playing Against</th>
+        <th>Players</th>
+        <th>Game</th>
+        <th>Btc</th>
+        <th>Da Purse</th>
+        <th>Pending Balance</th>
+
+      </tr>
+      <tr ng-repeat=" match in matches">
+        <td>{{match._postedby}}</td>
+        <td>{{match.datetime | date:'shortTime'}}</td>
+        <td>{{match.name}}</td>
+        <td>{{match.players[0]}}</td>
+        <td>{{match.players.length + 1}}</td>
+        <td>{{match.game}}</td>
+        <td>{{match.btc}}</td>
+        <td>{{wallet.data.available_balance}}</td>
+        <td>{{wallet.data.pending_received_balance}}</td>
+      </tr>
+
+    </table>
+
+
+  </div>
+
+</div>
+
+  <center><p style="font-size: 50px; color: orange;">S#%T Talking Area</h1></center>
+  <div id="message_board" style="height: 300px; width: 715px; border: 2px solid orange; background-color: black; overflow: scroll; margin: auto;"></div>
+  <center><form id="new_message">
+    <input type="text" id="message" placeholder="Enter Message">
+    <input type="submit" value="Send Message">
+  </form>
+</center>
